@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int mySqrt(int x) {
+       int num=x;
+       int s=0,e=num/2;
+   long long int mid=s+(e-s)/2;
+    int ans=-1;
+    if(x==1){
+        return 1;
+    }
+    while(s<=e){
+    
+    if(mid*mid==num){return mid;}
+    else if(mid*mid<num){
+        ans=mid;
+        s=mid+1;
+    }
+    else{
+        e=mid-1;
+    }
+
+    mid=s+(e-s)/2;
+
+    }
+        
+        return ans;
+
+    }
+};
